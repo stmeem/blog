@@ -4,7 +4,7 @@ const Layout =({children})=>{
     return(
         <>
         <Head>
-        <title>Boilerplate</title>
+        <title>Sumaiya's Blog</title>
         </Head>
         <Nav/>
         <div >
