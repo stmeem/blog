@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {Nav} from './index';
+import {Nav} from '../index';
 
 const Layout =({children})=>{
     return(

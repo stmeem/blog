@@ -1,5 +1,8 @@
 import Link from "next/link";
-export default function Home() {
+import { PostCard } from "../components";
+import { getPosts } from "../queries/posts";
+
+export default function Home({posts}) {
   return (
     <div>
       <div className="min-h-screen py-44 bg-blue-100">
@@ -8,15 +11,21 @@ export default function Home() {
            
           </h2>
           <h3 className="text-2xl mb-8 text-black-200">
-          
+          <div className="lg:col-span-8 col-span-1">
+          {posts.map((post, index) => (
+            <PostCard key={index} post={post.node} />
+          ))}
+        </div>
           </h3>
-          {/* <Link href="">
-            <button className="bg-blue-400 hover:bg-blue-500 text-white  rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
-            
-            </button>
-          </Link> */}
         </div>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps(){
+  const posts= (await getPosts())||[];
+    return { 
+     props: {posts}
+     }
 }
