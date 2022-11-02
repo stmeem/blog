@@ -1,25 +1,24 @@
 import Link from "next/link";
-import { PostCard } from "../components";
+import { PostCard,PostWidget,Categories } from "../components";
 import { getPosts } from "../queries/posts";
 
 export default function Home({posts}) {
   return (
-    <div>
-      <div className="min-h-screen py-44 bg-blue-100">
-        <div className="container lg:px-32 px-6">
-          <h2 className="text-4xl font-bold mb-2 text-black">
-           
-          </h2>
-          <h3 className="text-2xl mb-8 text-black-200">
-          <div className="lg:col-span-8 col-span-1">
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
-          ))}
-        </div>
-          </h3>
+    <div className="container mx-auto px-10 mb-8 mt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="lg:col-span-8 col-span-1">
+        {posts.map((post, index) => (
+          <PostCard key={index} post={post.node} />
+        ))}
+      </div>
+      <div className="lg:col-span-4 col-span-1">
+        <div className="lg:sticky relative top-8">
+          <PostWidget />
+          <Categories />
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
