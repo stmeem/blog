@@ -13,7 +13,6 @@ const PostWidget = ({ categories, slug }) => {
       getRecentPosts().then((result) => setPostWidget(result));
     }
   }, [slug]);
-  console.log(postWidget);
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">

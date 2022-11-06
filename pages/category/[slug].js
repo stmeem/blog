@@ -1,8 +1,14 @@
 import React from "react";
+import { useRouter } from 'next/router';
 import { getCategories, getCategoryPost } from "../../queries";
 import { PostCard, Categories } from "../../components";
 
 const CategoryPost = ({ posts }) => {
+    const router = useRouter();
+    
+    if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <div className="container mx-auto px-10 mb-8 mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

@@ -1,8 +1,13 @@
 import React from "react";
-import { Article, Categories, PostWidget, Author } from "../../components";
+import { Loader, Article, Categories, PostWidget, Author } from "../../components";
 import { getPosts, getPostDetails } from "../../queries";
+import { useRouter } from 'next/router';
 
 const PostDetail = ({ post }) => {
+    const router = useRouter();
+    if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <>
       <div className="container mx-auto px-10 mb-8 mt-20">
