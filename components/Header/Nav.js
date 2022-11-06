@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <header className="lg:px-32 px-8 bg-white flex flex-wrap items-center py-2 shadow-md">
       <div className="flex-1 flex justify-between items-center">
-        <a href="#" className="text-xl">
+        <a href="/" className="text-xl">
           Sumaiya's Blog
         </a>
       </div>
