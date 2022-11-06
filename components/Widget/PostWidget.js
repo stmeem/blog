@@ -23,13 +23,21 @@ const PostWidget = ({ categories, slug }) => {
       {postWidget.map((post) => (
         <div key={post.title} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
-            <img alt={post.title} src={post.featuredImage.url} className="align-middle widget-image"/>
+            <img
+              alt={post.title}
+              src={post.featuredImage.url}
+              className="align-middle widget-image"
+            />
           </div>
           <div className="flex-grow ml-4">
             <p className="text-gray-500 text-xs">
-              {moment(post.createdAt).format('MMM DD, YYYY')}
+              {moment(post.createdAt).format("MMM DD, YYYY")}
             </p>
-            <Link href={`/post/${post.slug}`} key={post.title}className="text-md">
+            <Link
+              href={`/post/${post.slug}`}
+              key={post.title}
+              className="text-md"
+            >
               {post.title}
             </Link>
           </div>
