@@ -1,21 +1,22 @@
-import React from 'react';
-import { Article, Categories, PostWidget, Author } from '../../components';
-import { getPosts, getPostDetails } from '../../queries';
+import React from "react";
+import { Article, Categories, PostWidget, Author } from "../../components";
+import { getPosts, getPostDetails } from "../../queries";
 
 const PostDetail = ({ post }) => {
-
   return (
     <>
       <div className="container mx-auto px-10 mb-8 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">
             <Article post={post} />
-            <Author author={post.author} />
-           
           </div>
           <div className="col-span-1 lg:col-span-4">
+            <Author author={post.author} />
             <div className="relative lg:sticky top-8">
-              <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
+              <PostWidget
+                slug={post.slug}
+                categories={post.categories.map((category) => category.slug)}
+              />
               <Categories />
             </div>
           </div>
@@ -26,7 +27,6 @@ const PostDetail = ({ post }) => {
 };
 export default PostDetail;
 
-
 export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug);
   return {
@@ -35,7 +35,6 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-
 
 export async function getStaticPaths() {
   const posts = await getPosts();
