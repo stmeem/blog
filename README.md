@@ -1,6 +1,6 @@
-# Blog app built with Next.js, GraphQL, TailwindCSS
+## Blog app built with Next.js, GraphQL, TailwindCSS
 
-## Quick Start
+### Quick Start
 - Clone or download this repository.
 - Switch into the directory. 
 - Install dependencies `npm install next react react-dom`.
