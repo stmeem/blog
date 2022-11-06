@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PostCard,PostWidget,Categories } from "../components";
-import { getPosts } from "../queries/posts";
+import { getPosts } from "../queries";
 
 export default function Home({posts}) {
   return (
@@ -13,8 +13,7 @@ export default function Home({posts}) {
       </div>
       <div className="lg:col-span-4 col-span-1">
         <div className="lg:sticky relative top-8">
-          <PostWidget />
-          <Categories />
+          <PostWidget/>
         </div>
       </div>
     </div>
